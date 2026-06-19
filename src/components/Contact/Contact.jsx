@@ -67,7 +67,7 @@ function Contact() {
             </div>
 
             <div className="space-y-3 text-gray-300">
-              <p>Email: ashish07319@gmail.com</p>
+              <p>Email: www.ashiskmr@gmail.com</p>
               <p>Location: India</p>
             </div>
 
