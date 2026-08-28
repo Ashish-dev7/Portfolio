@@ -10,7 +10,6 @@ function Projects() {
       className="relative w-full flex justify-center bg-[#020617] text-white py-20 px-6"
     >
       <div className="w-full max-w-6xl">
-        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,16 +24,14 @@ function Projects() {
             Projects
           </h2>
 
-          <p className="text-gray-400 mt-3 max-w-2xl">
+          <p className="text-gray-400 text-base md:text-lg mt-3 max-w-2xl">
             Here are some of the projects I've built while learning and
             improving my frontend development skills.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
-          {/* SkillScan */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +49,6 @@ function Projects() {
               duration-300
             "
           >
-            {/* Project Image */}
             <div className="relative h-52 overflow-hidden bg-gray-900">
               <img
                 src={hero1}
@@ -67,11 +63,11 @@ function Projects() {
                 "
               />
 
-              {/* Image Overlay */}
+
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
-            {/* Project Content */}
+
             <div className="p-5">
               <h3 className="text-xl font-semibold">
                 SkillScan
@@ -83,7 +79,7 @@ function Projects() {
                 job-ready optimization.
               </p>
 
-              {/* Technologies */}
+
               <div className="flex flex-wrap gap-2 mt-4">
                 <span className="px-2.5 py-1 text-xs rounded-md bg-green-500/10 text-green-400 border border-green-500/20">
                   React
@@ -98,7 +94,7 @@ function Projects() {
                 </span>
               </div>
 
-              {/* Buttons */}
+
               <div className="flex gap-3 mt-6">
                 <a
                   href="https://skill-scan-rho.vercel.app/"
@@ -151,9 +147,6 @@ function Projects() {
           </motion.div>
         </div>
       </div>
-
-      {/* Section Divider */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl h-px bg-green-500/30" />
     </section>
   );
 }

@@ -64,6 +64,13 @@ function Navbar() {
           </a>
 
           <a
+            href="#certifications"
+            className="text-white hover:text-green-500 transition"
+          >
+            Certifications
+          </a>
+
+          <a
             href="#contact"
             className="text-white hover:text-green-500 transition"
           >
@@ -147,6 +154,14 @@ function Navbar() {
                 className="text-white hover:text-green-500 transition"
               >
                 Projects
+              </a>
+
+              <a
+                href="#certifications"
+                onClick={closeMenu}
+                className="text-white hover:text-green-500 transition"
+              >
+                Certifications
               </a>
 
               <a

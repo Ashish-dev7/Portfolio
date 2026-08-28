@@ -222,11 +222,7 @@ function About() {
           </div>
         </motion.div>
       </div>
-
-      {/* Section Divider */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl h-px bg-green-500/30" />
     </section>
   );
 }
-
 export default About;
