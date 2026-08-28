@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -11,23 +12,7 @@ function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <nav
-        className="
-          w-full
-          max-w-6xl
-          px-5
-          py-3
-          flex
-          items-center
-          justify-between
-          bg-white/10
-          backdrop-blur-md
-          border
-          border-white/20
-          rounded-xl
-        "
-      >
-        {/* Logo */}
+      <nav className="relative w-[90%] max-w-7xl px-6 py-3 flex justify-between items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
         <a
           href="#home"
           onClick={() => setMenuOpen(false)}
@@ -107,8 +92,9 @@ function Navbar() {
           <motion.div
             className="
               absolute
-              top-20
+              top-full
               left-0
+              mt-2
               w-full
               bg-[#020617]
               border
