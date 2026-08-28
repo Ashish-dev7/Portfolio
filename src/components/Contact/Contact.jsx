@@ -37,7 +37,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="w-full flex justify-center bg-[#020617] text-white py-20 px-6"
+      className="w-full flex justify-center bg-[#020617] text-white py-20 px-4 md:px-6"
     >
       <div className="w-full max-w-6xl">
         {/* Heading */}
@@ -63,7 +63,7 @@ function Contact() {
         </motion.div>
 
         {/* Contact Content */}
-        <div className="mt-12 grid md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -94,6 +94,7 @@ function Contact() {
                     rounded-lg
                     bg-green-500/10
                     text-green-500
+                    shrink-0
                   "
                 >
                   <i className="ri-mail-line text-lg"></i>
@@ -104,7 +105,7 @@ function Contact() {
 
                   <a
                     href="mailto:ashish07319@gmail.com"
-                    className="text-gray-200 hover:text-green-400 transition"
+                    className="text-gray-200 hover:text-green-400 transition break-all"
                   >
                   www.ashiskmr@gmail.com
                   </a>
@@ -121,6 +122,7 @@ function Contact() {
                     rounded-lg
                     bg-green-500/10
                     text-green-500
+                    shrink-0
                   "
                 >
                   <i className="ri-map-pin-line text-lg"></i>
@@ -135,7 +137,7 @@ function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-3 mt-8">
+            <div className="flex flex-wrap gap-3 mt-8">
               <motion.a
                 href="https://github.com/Ashish-dev7"
                 target="_blank"

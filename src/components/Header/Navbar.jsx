@@ -1,21 +1,40 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <motion.header
-      className="fixed top-4 left-0 w-full flex justify-center z-50 px-4"
+      className="fixed top-4 left-0 right-0 z-50 px-4"
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <nav className="relative w-[90%] max-w-7xl px-6 py-3 flex justify-between items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
+      <nav
+        className="
+          relative
+          w-full
+          max-w-6xl
+          mx-auto
+          px-5
+          py-3
+          flex
+          items-center
+          justify-between
+          bg-white/10
+          backdrop-blur-md
+          border
+          border-white/20
+          rounded-xl
+        "
+      >
+        {/* Logo */}
         <a
           href="#home"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeMenu}
           className="text-xl font-bold text-white"
         >
           <span className="text-green-500">A</span>K
@@ -52,7 +71,7 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Resume */}
+        {/* Desktop Resume */}
         <a
           href="/Resume.pdf"
           download
@@ -73,17 +92,15 @@ function Navbar() {
           Resume
         </a>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
+          type="button"
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-white text-2xl"
+          aria-label="Toggle menu"
         >
           <i
-            className={
-              menuOpen
-                ? "ri-close-line"
-                : "ri-menu-line"
-            }
+            className={menuOpen ? "ri-close-line" : "ri-menu-line"}
           ></i>
         </button>
 
@@ -94,6 +111,7 @@ function Navbar() {
               absolute
               top-full
               left-0
+              right-0
               mt-2
               w-full
               bg-[#020617]
@@ -109,7 +127,7 @@ function Navbar() {
             <div className="flex flex-col items-center gap-5">
               <a
                 href="#home"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-white hover:text-green-500 transition"
               >
                 Home
@@ -117,7 +135,7 @@ function Navbar() {
 
               <a
                 href="#about"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-white hover:text-green-500 transition"
               >
                 About
@@ -125,7 +143,7 @@ function Navbar() {
 
               <a
                 href="#projects"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-white hover:text-green-500 transition"
               >
                 Projects
@@ -133,7 +151,7 @@ function Navbar() {
 
               <a
                 href="#contact"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-white hover:text-green-500 transition"
               >
                 Contact
@@ -142,7 +160,7 @@ function Navbar() {
               <a
                 href="/Resume.pdf"
                 download
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="
                   px-4
                   py-2

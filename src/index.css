@@ -11,3 +11,7 @@ body::selection {
 @theme {
   --color-primary: #5044e5;
 }
+
+html, body {
+  overflow-x: hidden;
+}

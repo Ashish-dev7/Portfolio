@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-[#020617] text-white px-6 py-24 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#020617] text-white px-6 py-24 overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="w-[500px] h-[500px] bg-green-500/10 blur-[120px] rounded-full" />
