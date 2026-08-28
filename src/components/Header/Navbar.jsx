@@ -6,41 +6,59 @@ function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-4 w-full flex justify-center z-50"
+      className="fixed top-4 left-0 w-full flex justify-center z-50 px-4"
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <nav className="w-[90%] max-w-7xl px-6 py-3 flex justify-between items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
+      <nav
+        className="
+          w-full
+          max-w-6xl
+          px-5
+          py-3
+          flex
+          items-center
+          justify-between
+          bg-white/10
+          backdrop-blur-md
+          border
+          border-white/20
+          rounded-xl
+        "
+      >
         {/* Logo */}
         <a
-          href="#"
+          href="#home"
           onClick={() => setMenuOpen(false)}
-          className="text-white font-bold text-lg"
+          className="text-xl font-bold text-white"
         >
-          AK
+          <span className="text-green-500">A</span>K
         </a>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex items-center gap-8">
           <a
-            href="#"
+            href="#home"
             className="text-white hover:text-green-500 transition"
           >
             Home
           </a>
+
           <a
             href="#about"
             className="text-white hover:text-green-500 transition"
           >
             About
           </a>
+
           <a
             href="#projects"
             className="text-white hover:text-green-500 transition"
           >
             Projects
           </a>
+
           <a
             href="#contact"
             className="text-white hover:text-green-500 transition"
@@ -49,78 +67,114 @@ function Navbar() {
           </a>
         </div>
 
-        <div className="hidden md:block">
-          <a
-            href="/Resume.pdf"
-            download
-            
-            className="px-4 py-2 rounded-lg border border-white/20 text-white hover:border-green-500 hover:text-green-500 transition"
-          >
-            Resume
-          </a>
-        </div>
-
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setMenuOpen(!menuOpen)}
+        {/* Resume */}
+        <a
+          href="/Resume.pdf"
+          download
+          className="
+            hidden
+            md:block
+            px-4
+            py-2
+            rounded-lg
+            border
+            border-white/20
+            text-white
+            hover:border-green-500
+            hover:text-green-500
+            transition
+          "
         >
-          <i className={menuOpen ? "ri-close-line" : "ri-menu-line"}></i>
+          Resume
+        </a>
+
+        {/* Mobile Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-white text-2xl"
+        >
+          <i
+            className={
+              menuOpen
+                ? "ri-close-line"
+                : "ri-menu-line"
+            }
+          ></i>
         </button>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <motion.div
+            className="
+              absolute
+              top-20
+              left-0
+              w-full
+              bg-[#020617]
+              border
+              border-white/20
+              rounded-xl
+              p-6
+            "
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="flex flex-col items-center gap-5">
+              <a
+                href="#home"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-green-500 transition"
+              >
+                Home
+              </a>
+
+              <a
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-green-500 transition"
+              >
+                About
+              </a>
+
+              <a
+                href="#projects"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-green-500 transition"
+              >
+                Projects
+              </a>
+
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="text-white hover:text-green-500 transition"
+              >
+                Contact
+              </a>
+
+              <a
+                href="/Resume.pdf"
+                download
+                onClick={() => setMenuOpen(false)}
+                className="
+                  px-4
+                  py-2
+                  rounded-lg
+                  border
+                  border-white/20
+                  text-white
+                  hover:border-green-500
+                  hover:text-green-500
+                  transition
+                "
+              >
+                Resume
+              </a>
+            </div>
+          </motion.div>
+        )}
       </nav>
-
-      <motion.div
-        className="md:hidden absolute top-20 w-[90%] max-w-7xl"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{
-          opacity: menuOpen ? 1 : 0,
-          scale: menuOpen ? 1 : 0.95,
-        }}
-        transition={{ duration: 0.3 }}
-        style={{ pointerEvents: menuOpen ? "auto" : "none" }}
-      >
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 flex flex-col gap-6 items-center">
-          <a
-            href="#"
-            onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-green-500"
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-green-500"
-          >
-            About
-          </a>
-
-          <a
-            href="#projects"
-            onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-green-500"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="text-white hover:text-green-500"
-          >
-            Contact
-          </a>
-
-          <a
-            href="/Resume.pdf"
-            download
-            onClick={() => setMenuOpen(false)}
-            className="px-4 py-2 rounded-lg border border-white/20 text-white hover:border-green-500 hover:text-green-500 transition"
-          >
-            Resume
-          </a>
-        </div>
-      </motion.div>
     </motion.header>
   );
 }

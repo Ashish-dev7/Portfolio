@@ -1,64 +1,159 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import hero1 from "../../assets/SkillScan.png";
-
 
 function Projects() {
   return (
     <section
       id="projects"
-      className="w-full flex  relative justify-center bg-[#020617] text-white py-20"
+      className="relative w-full flex justify-center bg-[#020617] text-white py-20 px-6"
     >
-      <div className="w-[90%] max-w-7xl">
-        <motion.h2
-          className="text-2xl md:text-3xl font-semibold mb-10"
+      <div className="w-full max-w-6xl">
+        {/* Section Heading */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Projects
-        </motion.h2>
+          <p className="text-green-500 text-sm font-medium tracking-widest uppercase">
+            My Work
+          </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            Projects
+          </h2>
+
+          <p className="text-gray-400 mt-3 max-w-2xl">
+            Here are some of the projects I've built while learning and
+            improving my frontend development skills.
+          </p>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+          {/* SkillScan */}
           <motion.div
-            className="bg-white/5 border border-white/10 rounded-xl overflow-hidden"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ y: -8 }}
+            className="
+              group
+              bg-white/5
+              border border-white/10
+              rounded-2xl
+              overflow-hidden
+              hover:border-green-500/40
+              transition-colors
+              duration-300
+            "
           >
-            <div className="w-full h-40 bg-gray-800 flex items-center justify-center text-gray-400">
-              <img src={hero1} alt="" />
+            {/* Project Image */}
+            <div className="relative h-52 overflow-hidden bg-gray-900">
+              <img
+                src={hero1}
+                alt="SkillScan project"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  group-hover:scale-105
+                  transition-transform
+                  duration-500
+                "
+              />
+
+              {/* Image Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">SkillScan</h3>
+            {/* Project Content */}
+            <div className="p-5">
+              <h3 className="text-xl font-semibold">
+                SkillScan
+              </h3>
 
-              <p className="text-gray-400 text-sm mt-2">
-                SkillScan is an AI-powered resume analyzer that helps users
-                improve their resumes with smart suggestions, better formatting,
-                and job-ready optimization.
+              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+                An AI-powered resume analyzer that helps users improve their
+                resumes with smart suggestions, better formatting, and
+                job-ready optimization.
               </p>
 
-              <p className="text-gray-500 text-sm mt-2">
-                Tech: React.js, Tailwind CSS, JavaScript (ES6+),
-              </p>
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="px-2.5 py-1 text-xs rounded-md bg-green-500/10 text-green-400 border border-green-500/20">
+                  React
+                </span>
 
-              <div className="flex gap-3 mt-4">
-                <a href="https://skill-scan-rho.vercel.app/" target="_blank" className="px-3 py-1 text-sm border border-white/20 rounded-lg hover:border-green-500 transition">
-                  Live
+                <span className="px-2.5 py-1 text-xs rounded-md bg-green-500/10 text-green-400 border border-green-500/20">
+                  JavaScript
+                </span>
+
+                <span className="px-2.5 py-1 text-xs rounded-md bg-green-500/10 text-green-400 border border-green-500/20">
+                  Tailwind CSS
+                </span>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-3 mt-6">
+                <a
+                  href="https://skill-scan-rho.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    px-4
+                    py-2
+                    text-sm
+                    font-medium
+                    bg-green-500
+                    text-black
+                    rounded-lg
+                    hover:bg-green-400
+                    transition
+                  "
+                >
+                  Live Demo
+                  <i className="ri-external-link-line" />
                 </a>
-                <a href="https://github.com/Ashish-dev7/SkillScan" target="_blank" className="px-3 py-1 text-sm border border-white/20 rounded-lg hover:border-green-500 transition">
+
+                <a
+                  href="https://github.com/Ashish-dev7/SkillScan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex
+                    items-center
+                    gap-2
+                    px-4
+                    py-2
+                    text-sm
+                    border
+                    border-white/15
+                    rounded-lg
+                    text-gray-300
+                    hover:text-green-400
+                    hover:border-green-500
+                    transition
+                  "
+                >
                   Code
+                  <i className="ri-github-line" />
                 </a>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-      <hr className="border-0.5 absolute bottom-1 max-w-7xl text-green-600 w-full " />
+
+      {/* Section Divider */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl h-px bg-green-500/30" />
     </section>
   );
 }

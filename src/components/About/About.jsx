@@ -1,183 +1,230 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 
 function About() {
+  const skills = [
+    {
+      name: "HTML",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    },
+    {
+      name: "CSS",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    },
+    {
+      name: "JavaScript",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "React",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    },
+    {
+      name: "Tailwind CSS",
+      image: "https://cdn.simpleicons.org/tailwindcss/38bdf8",
+    },
+    {
+      name: "Git",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    },
+    {
+      name: "GitHub",
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    },
+    {
+      name: "Framer Motion",
+      image: "https://cdn.simpleicons.org/framer/ffffff",
+    },
+  ];
+
   return (
     <section
       id="about"
-      className="w-full relative flex justify-center bg-[#020617] text-white py-20"
+      className="relative w-full flex justify-center bg-[#020617] text-white py-20 px-6"
     >
-      <div className="w-[90%] max-w-7xl flex flex-col md:flex-row items-start gap-12">
+      <div className="w-full max-w-6xl">
+        {/* About Heading */}
         <motion.div
-          className="w-full md:w-1/2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl font-semibold">About Me</h2>
-
-          <p className="text-gray-400 mt-4 text-base md:text-lg leading-relaxed">
-            I am Ashish Kumar, a beginner frontend developer. I have learned
-            HTML, CSS, JavaScript, and React, and I enjoy building simple and
-            responsive web applications.
+          <p className="text-green-500 text-sm font-medium tracking-widest uppercase">
+            About Me
           </p>
 
-          <p className="text-gray-400 mt-4 text-base md:text-lg leading-relaxed">
-            Currently, I am improving my skills by building projects and
-            learning more about web development step by step.
+          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+            A little about me
+          </h2>
+
+          <p className="text-gray-400 mt-5 max-w-3xl text-base md:text-lg leading-relaxed">
+            I am Ashish Kumar, a beginner frontend developer passionate about
+            creating clean and responsive web applications. I enjoy learning
+            new technologies and turning ideas into simple, functional
+            interfaces.
           </p>
 
-          <div className="mt-6 text-sm md:text-base text-gray-300 space-y-1">
-            <p>Based in India</p>
-            <p>Open to internships / fresher roles</p>
-          </div>
-          {/* Education part */}
-          <div>
-            <h3 className="text-2xl mt-6 md:text-2xl font-semibold">
+          <p className="text-gray-400 mt-4 max-w-3xl text-base md:text-lg leading-relaxed">
+            Currently, I am improving my frontend skills by building projects,
+            practicing JavaScript and React, and learning more about modern web
+            development.
+          </p>
+        </motion.div>
+
+        {/* Education + Details */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-6 mt-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
+          {/* Education */}
+          <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+            <h3 className="text-xl font-semibold mb-5">
               Education
             </h3>
-            <div className="w-ful h-full">
-              <div className="w-full py-20 px-4">
-                <div className="relative max-w-4xl mx-auto h-10"> 
-                  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-linear-to-r from-green-700 via-green-400 to-white -translate-y-1/2"></div>
 
-                  <motion.div
-                    className="absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
-                    initial={{ opacity: 0, y: -30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                  >
-                    <div className="w-3 h-3 mb-6 bg-green-600 rounded-full mx-auto"></div>
+            <div className="space-y-5">
+              <div>
+                <h4 className="text-white font-medium">
+                  Bachelor of Computer Applications
+                </h4>
 
-                    <div className="-mb-15">
-                      <h3 className="text-white text-sm font-medium">
-                        12th (BSEB)
-                      </h3>
-                      <p className="text-xs text-gray-400">Completed in 2024</p>
-                    </div>
-                  </motion.div>
+                <p className="text-gray-400 text-sm mt-1">
+                  Teerthanker Mahaveer University
+                </p>
 
-                  <motion.div
-                    className="absolute left-3/4 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <div className="w-3 h-3 -mt-1.5 bg-white rounded-full mx-auto"></div>
-                    <div className="-mt-28 md:-mt-22">
-                      <h3 className="text-white text-sm font-medium">BCA</h3>
-                      <p className="text-xs leading-tight text-gray-400">
-                        Teerthanker Mahaveer University 2024 - 2027
-                      </p>
-                    </div>
-                  </motion.div>
-                </div>
+                <p className="text-green-500 text-sm mt-1">
+                  2024 - 2027
+                </p>
+              </div>
+
+              <div className="border-t border-white/10 pt-5">
+                <h4 className="text-white font-medium">
+                  12th - BSEB
+                </h4>
+
+                <p className="text-green-500 text-sm mt-1">
+                  Completed in 2024
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Details */}
+          <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+            <h3 className="text-xl font-semibold mb-5">
+              Quick Details
+            </h3>
+
+            <div className="space-y-4">
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Location
+                </p>
+
+                <p className="text-gray-200 mt-1">
+                  India
+                </p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Role
+                </p>
+
+                <p className="text-gray-200 mt-1">
+                  Frontend Developer
+                </p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Currently Learning
+                </p>
+
+                <p className="text-gray-200 mt-1">
+                  React & Full Stack Development
+                </p>
+              </div>
+
+              <div>
+                <p className="text-gray-500 text-sm">
+                  Availability
+                </p>
+
+                <p className="text-green-400 mt-1">
+                  Open to internships & fresher opportunities
+                </p>
               </div>
             </div>
           </div>
         </motion.div>
 
+        {/* Skills */}
         <motion.div
-          className="w-full md:w-1/2"
+          className="mt-14"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-xl md:text-2xl font-semibold mb-6">Skills</h3>
+          <div className="flex items-center gap-4 mb-6">
+            <h3 className="text-xl md:text-2xl font-semibold">
+              Skills
+            </h3>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center justify-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">HTML</span>
-            </motion.div>
+            <div className="h-px bg-white/10 flex-1" />
+          </div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">CSS</span>
-            </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {skills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                whileHover={{
+                  y: -5,
+                  scale: 1.03,
+                }}
+                transition={{ duration: 0.2 }}
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  p-4
+                  bg-white/5
+                  border
+                  border-white/10
+                  rounded-xl
+                  hover:border-green-500/40
+                  transition-colors
+                "
+              >
+                <img
+                  src={skill.image}
+                  alt={skill.name}
+                  className="w-8 h-8 object-contain"
+                />
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">JavaScript</span>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">React</span>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.simpleicons.org/tailwindcss/38bdf8"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">Tailwind</span>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">Git</span>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                className="w-10 h-10 bg-white rounded-full"
-              />
-              <span className="mt-3 text-sm">GitHub</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center justify-center p-5 bg-white/5 border border-white/10 rounded-xl"
-            >
-              <img
-                src="https://cdn.simpleicons.org/framer/ffffff"
-                alt="Framer Motion"
-                className="w-10 h-10"
-              />
-              <span className="mt-3 text-sm">Framer Motion</span>
-            </motion.div>
+                <span className="text-sm text-gray-300">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
-      <hr className="border-0.5 absolute bottom-1 max-w-7xl text-green-600 w-full " />
+
+      {/* Section Divider */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl h-px bg-green-500/30" />
     </section>
   );
 }
