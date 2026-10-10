@@ -1,68 +1,72 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 
 function Footer() {
   return (
     <motion.footer
-      className="w-full bg-[#020617] text-white border-t border-white/10 py-10"
+      className="w-full bg-[#020617] text-white border-t border-white/10 py-10 px-4 sm:px-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className="w-[90%] max-w-6xl mx-auto">
-
+      <div className="w-full max-w-6xl mx-auto">
         {/* Main Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-
           {/* Logo / Name */}
           <div className="text-center md:text-left">
             <a
               href="#home"
-              className="text-xl font-bold"
+              className="text-xl font-bold tracking-tight text-white hover:opacity-90 transition"
             >
               <span className="text-green-500">A</span>K
             </a>
 
-            <p className="text-gray-400 text-sm mt-1">
+            <p className="text-gray-400 text-sm mt-1 font-normal">
               Frontend Developer
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
             <a
               href="#home"
-              className="text-gray-400 hover:text-green-500 transition"
+              className="text-gray-400 hover:text-green-400 transition"
             >
               Home
             </a>
 
             <a
               href="#about"
-              className="text-gray-400 hover:text-green-500 transition"
+              className="text-gray-400 hover:text-green-400 transition"
             >
               About
             </a>
 
             <a
               href="#projects"
-              className="text-gray-400 hover:text-green-500 transition"
+              className="text-gray-400 hover:text-green-400 transition"
             >
               Projects
             </a>
 
             <a
+              href="#certifications"
+              className="text-gray-400 hover:text-green-400 transition"
+            >
+              Certifications
+            </a>
+
+            <a
               href="#contact"
-              className="text-gray-400 hover:text-green-500 transition"
+              className="text-gray-400 hover:text-green-400 transition"
             >
               Contact
             </a>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <motion.a
               href="https://github.com/Ashish-dev7"
               target="_blank"
@@ -78,8 +82,9 @@ function Footer() {
                 border
                 border-white/10
                 text-gray-400
-                hover:text-green-500
+                hover:text-green-400
                 hover:border-green-500/50
+                hover:bg-white/5
                 transition
               "
               aria-label="GitHub"
@@ -102,8 +107,9 @@ function Footer() {
                 border
                 border-white/10
                 text-gray-400
-                hover:text-green-500
+                hover:text-green-400
                 hover:border-green-500/50
+                hover:bg-white/5
                 transition
               "
               aria-label="LinkedIn"
@@ -117,19 +123,19 @@ function Footer() {
         <div className="w-full h-px bg-white/10 my-7" />
 
         {/* Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
-          <p className="text-gray-500">
-            © 2026 Ashish Kumar. All rights reserved.
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-gray-500 font-normal">
+          <p>
+            © {new Date().getFullYear()} Ashish Kumar. All rights reserved.
           </p>
 
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             Built with React & Tailwind CSS
           </p>
         </div>
-
       </div>
     </motion.footer>
   );
 }
 
 export default Footer;
+

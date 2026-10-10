@@ -10,13 +10,12 @@ function Contact() {
     setLoading(true);
 
     const formData = new FormData(e.target);
-
     formData.append("access_key", "69d6ecfe-a449-49a5-9f7f-8c944bff37fc");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,  
+        body: formData,
       });
 
       const data = await response.json();
@@ -27,7 +26,7 @@ function Contact() {
       } else {
         toast.error("Unable to send message.");
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -37,44 +36,43 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="w-full flex justify-center bg-[#020617] text-white py-20 px-4 md:px-6"
+      className="w-full flex justify-center bg-[#020617] text-white py-16 sm:py-20 px-4 sm:px-6 scroll-mt-20"
     >
       <div className="w-full max-w-6xl">
         {/* Heading */}
         <motion.div
-          className="text-center max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-green-500 text-sm font-medium tracking-widest uppercase">
+          <p className="text-green-500 text-xs sm:text-sm font-semibold tracking-widest uppercase">
             Contact
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold mt-2">
             Let's Work Together
           </h2>
 
-          <p className="text-gray-400 mt-4 text-base md:text-lg">
+          <p className="text-gray-400 mt-4 max-w-2xl text-sm sm:text-base md:text-lg font-normal">
             Have an opportunity, project, or question? Feel free to get in touch
             with me.
           </p>
         </motion.div>
 
         {/* Contact Content */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-start"
           >
             <h3 className="text-2xl font-semibold">Get in touch</h3>
 
-            <p className="text-gray-400 mt-3 max-w-md leading-relaxed">
+            <p className="text-gray-400 mt-3 max-w-md leading-relaxed font-normal text-sm sm:text-base">
               I'm currently looking for internship and fresher opportunities. If
               you have an opportunity or would like to collaborate, feel free to
               reach out.
@@ -86,52 +84,64 @@ function Contact() {
               <div className="flex items-center gap-4">
                 <div
                   className="
-                    w-10
-                    h-10
+                    w-11
+                    h-11
                     flex
                     items-center
                     justify-center
-                    rounded-lg
+                    rounded-xl
                     bg-green-500/10
-                    text-green-500
+                    text-green-400
+                    border
+                    border-green-500/20
                     shrink-0
                   "
                 >
-                  <i className="ri-mail-line text-lg"></i>
+                  <i className="ri-mail-line text-xl"></i>
                 </div>
 
                 <div>
-                  <p className="text-gray-500 text-sm">Email</p>
+                  <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
+                    Email
+                  </p>
 
                   <a
                     href="mailto:ashish07319@gmail.com"
-                    className="text-gray-200 hover:text-green-400 transition break-all"
+                    className="text-gray-200 hover:text-green-400 transition font-medium text-sm sm:text-base break-all"
                   >
-                  www.ashiskmr@gmail.com
+                    www.ashiskmr@gmail.com
                   </a>
                 </div>
               </div>
+
+              {/* Location */}
               <div className="flex items-center gap-4">
                 <div
                   className="
-                    w-10
-                    h-10
+                    w-11
+                    h-11
                     flex
                     items-center
                     justify-center
-                    rounded-lg
+                    rounded-xl
                     bg-green-500/10
-                    text-green-500
+                    text-green-400
+                    border
+                    border-green-500/20
                     shrink-0
                   "
                 >
-                  <i className="ri-map-pin-line text-lg"></i>
+                  <i className="ri-map-pin-line text-xl"></i>
                 </div>
 
                 <div>
-                  <p className="text-gray-500 text-sm">Location</p>
+                  <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold">
+                    Location
+                  </p>
 
-                  <p className="text-gray-200">India</p>
+                  <p className="text-gray-200 font-medium text-sm sm:text-base">
+                    India
+                  </p>
                 </div>
               </div>
             </div>
@@ -145,21 +155,23 @@ function Contact() {
                 whileHover={{ y: -3 }}
                 className="
                   px-4
-                  py-2
+                  py-2.5
                   flex
                   items-center
                   gap-2
                   bg-white/5
                   border
                   border-white/10
-                  rounded-lg
+                  rounded-xl
                   text-gray-300
                   hover:text-green-400
-                  hover:border-green-500
+                  hover:border-green-500/50
                   transition
+                  font-medium
+                  text-sm
                 "
               >
-                <i className="ri-github-line"></i>
+                <i className="ri-github-line text-lg"></i>
                 GitHub
               </motion.a>
 
@@ -170,21 +182,23 @@ function Contact() {
                 whileHover={{ y: -3 }}
                 className="
                   px-4
-                  py-2
+                  py-2.5
                   flex
                   items-center
                   gap-2
                   bg-white/5
                   border
                   border-white/10
-                  rounded-lg
+                  rounded-xl
                   text-gray-300
                   hover:text-green-400
-                  hover:border-green-500
+                  hover:border-green-500/50
                   transition
+                  font-medium
+                  text-sm
                 "
               >
-                <i className="ri-linkedin-line"></i>
+                <i className="ri-linkedin-line text-lg"></i>
                 LinkedIn
               </motion.a>
             </div>
@@ -199,7 +213,7 @@ function Contact() {
               border-white/10
               rounded-2xl
               p-6
-              md:p-8
+              sm:p-8
             "
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -210,7 +224,7 @@ function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Name
               </label>
@@ -228,12 +242,15 @@ function Contact() {
                   bg-white/5
                   border
                   border-white/10
-                  rounded-lg
+                  rounded-xl
                   text-white
                   placeholder-gray-500
                   outline-none
                   focus:border-green-500
+                  focus:ring-1
+                  focus:ring-green-500
                   transition
+                  text-sm sm:text-base
                 "
               />
             </div>
@@ -242,7 +259,7 @@ function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="email"
-                className="block text-sm text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Email
               </label>
@@ -260,12 +277,15 @@ function Contact() {
                   bg-white/5
                   border
                   border-white/10
-                  rounded-lg
+                  rounded-xl
                   text-white
                   placeholder-gray-500
                   outline-none
                   focus:border-green-500
+                  focus:ring-1
+                  focus:ring-green-500
                   transition
+                  text-sm sm:text-base
                 "
               />
             </div>
@@ -274,7 +294,7 @@ function Contact() {
             <div className="mt-5">
               <label
                 htmlFor="message"
-                className="block text-sm text-gray-300 mb-2"
+                className="block text-sm font-medium text-gray-300 mb-2"
               >
                 Message
               </label>
@@ -292,13 +312,16 @@ function Contact() {
                   bg-white/5
                   border
                   border-white/10
-                  rounded-lg
+                  rounded-xl
                   text-white
                   placeholder-gray-500
                   outline-none
                   resize-none
                   focus:border-green-500
+                  focus:ring-1
+                  focus:ring-green-500
                   transition
+                  text-sm sm:text-base
                 "
               ></textarea>
             </div>
@@ -312,18 +335,28 @@ function Contact() {
               className="
                 w-full
                 mt-6
-                py-3
+                py-3.5
                 bg-green-500
                 hover:bg-green-400
                 disabled:opacity-60
                 disabled:cursor-not-allowed
                 text-black
                 font-semibold
-                rounded-lg
+                rounded-xl
                 transition
+                text-sm sm:text-base
+                shadow-lg
+                shadow-green-500/20
               "
             >
-              {loading ? "Sending..." : "Send Message"}
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <i className="ri-loader-4-line animate-spin text-lg" />
+                  Sending...
+                </span>
+              ) : (
+                "Send Message"
+              )}
             </motion.button>
           </motion.form>
         </div>
@@ -333,3 +366,4 @@ function Contact() {
 }
 
 export default Contact;
+
