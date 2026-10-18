@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import GitHubGraph from "../GitHubCalender/GitHubGraph";
+
 
 function About() {
   const skills = [
@@ -66,9 +68,8 @@ function About() {
 
           <p className="text-gray-400 mt-5 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed font-normal">
             I am Ashish Kumar, a beginner frontend developer passionate about
-            creating clean and responsive web applications. I enjoy learning
-            new technologies and turning ideas into simple, functional
-            interfaces.
+            creating clean and responsive web applications. I enjoy learning new
+            technologies and turning ideas into simple, functional interfaces.
           </p>
 
           <p className="text-gray-400 mt-4 max-w-3xl text-sm sm:text-base md:text-lg leading-relaxed font-normal">
@@ -130,22 +131,36 @@ function About() {
 
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 border-b border-white/5 gap-1">
-                  <span className="text-gray-400 text-sm font-normal">Location</span>
-                  <span className="text-gray-200 font-medium text-sm sm:text-base">India</span>
+                  <span className="text-gray-400 text-sm font-normal">
+                    Location
+                  </span>
+                  <span className="text-gray-200 font-medium text-sm sm:text-base">
+                    India
+                  </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 border-b border-white/5 gap-1">
-                  <span className="text-gray-400 text-sm font-normal">Role</span>
-                  <span className="text-gray-200 font-medium text-sm sm:text-base">Frontend Developer</span>
+                  <span className="text-gray-400 text-sm font-normal">
+                    Role
+                  </span>
+                  <span className="text-gray-200 font-medium text-sm sm:text-base">
+                    Frontend Developer
+                  </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 border-b border-white/5 gap-1">
-                  <span className="text-gray-400 text-sm font-normal">Currently Learning</span>
-                  <span className="text-gray-200 font-medium text-sm sm:text-base">React & Modern Web</span>
+                  <span className="text-gray-400 text-sm font-normal">
+                    Currently Learning
+                  </span>
+                  <span className="text-gray-200 font-medium text-sm sm:text-base">
+                    React & Modern Web
+                  </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1.5 gap-1">
-                  <span className="text-gray-400 text-sm font-normal">Availability</span>
+                  <span className="text-gray-400 text-sm font-normal">
+                    Availability
+                  </span>
                   <span className="text-green-400 font-medium text-sm sm:text-base">
                     Open to internships & fresher roles
                   </span>
@@ -210,10 +225,10 @@ function About() {
             ))}
           </div>
         </motion.div>
+        <GitHubGraph username="Ashish-dev7" />
       </div>
     </section>
   );
 }
 
 export default About;
-

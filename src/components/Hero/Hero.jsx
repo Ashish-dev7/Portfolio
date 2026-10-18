@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { TextShimmer } from "../../../ShimmerText";
 import hero2 from "../../assets/hero2.png";
+import { TextScramble } from "../../../TextEffects";
 
 function Hero() {
   const firstName = "ASHISH";
@@ -9,10 +11,10 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-[#020617] text-white px-4 sm:px-6 pt-28 pb-16 md:py-28 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-[#020617] text-white px-4 sm:px-6 pt-28 pb-16 md:py-38 overflow-hidden  "
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-        <div className="w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-green-500/10 blur-[100px] sm:blur-[130px] rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none  ">
+        <div className="w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-green-500/10 blur-[100px] sm:blur-[130px] rounded-full " />
       </div>
 
       <div className="relative w-full max-w-7xl flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
@@ -26,7 +28,7 @@ function Hero() {
           >
             <span className="w-8 sm:w-10 h-[2px] bg-green-500" />
             <span className="text-green-400 text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase">
-              Hello, I'm
+              <TextShimmer children={"HELLO, I'M"} />
             </span>
           </motion.div>
           <div className="relative overflow-hidden py-1 w-full flex flex-col items-center md:items-start">
@@ -141,9 +143,11 @@ function Hero() {
             }}
             className="mt-4 sm:mt-5 flex items-center justify-center md:justify-start gap-2"
           >
-            <span className="text-gray-400 text-base sm:text-lg font-normal">I'm a</span>
-            <span className="text-lg sm:text-2xl text-gray-100 font-semibold">
-              Frontend Developer
+            <span className="text-gray-400 text-base sm:text-lg font-normal">
+              I'm a
+            </span>
+            <span className="text-lg sm:text-4xl text-gray-100 font-semibold">
+              <TextShimmer children={"Frontend Developer"} />
             </span>
           </motion.div>
           <motion.p
@@ -155,8 +159,14 @@ function Hero() {
             }}
             className="text-gray-400 mt-4 max-w-lg text-sm sm:text-base md:text-lg leading-relaxed font-normal"
           >
-            I build modern, responsive, and user-friendly web applications with
-            clean interfaces and smooth experiences.
+            <TextScramble
+              as="span"
+              startDelay={2000} // 1.2s delay + 0.6s fade-in
+              respectReducedMotion={false}
+              text="I build modern, responsive, and user-friendly web applications with clean interfaces and smooth experiences."
+              mode="random"
+              color="#00e600"
+            />
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,14 +218,13 @@ function Hero() {
             delay: 0.4,
             ease: [0.22, 1, 0.36, 1],
           }}
-        >  
-            <img
-              src={hero2}
-              alt="Ashish Kumar - Frontend Developer"
-              className="relative brightness-85 w-full shadow-amber-50 shadow-amber-50"
-              loading="eager"
-            />
-        
+        >
+          <img
+            src={hero2}
+            alt="Ashish Kumar - Frontend Developer"
+            className="relative brightness-85 w-full shadow-amber-50 shadow-amber-50"
+            loading="eager"
+          />
         </motion.div>
       </div>
     </section>
@@ -223,4 +232,3 @@ function Hero() {
 }
 
 export default Hero;
-

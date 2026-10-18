@@ -54,13 +54,13 @@ function Navbar() {
             flex
             items-center
             justify-between
-            bg-[#090d1f]/85
-            backdrop-blur-md
+            bg-[#090d1f]/50
+            backdrop-blur-lg
             border
             border-white/10
             rounded-xl
             shadow-lg
-            shadow-black/25
+            shadow-black  /25
           "
         >
           {/* Logo */}
@@ -129,6 +129,7 @@ function Navbar() {
               hover:bg-white/5
               transition
               focus:outline-none
+              
             "
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
@@ -152,7 +153,7 @@ function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeMenu}
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm -z-10"
+              className="fixed inset-0  bg-black/70 backdrop-blur-sm -z-10"
               aria-hidden="true"
             />
 
@@ -163,10 +164,11 @@ function Navbar() {
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
               className="
+                 mt-2
                 w-full
                 max-w-md
                 mx-auto
-                bg-[#090d1f]
+               bg-[#090d1f]/50
                 border
                 border-white/15
                 rounded-2xl

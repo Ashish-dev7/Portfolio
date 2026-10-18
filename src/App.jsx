@@ -26,7 +26,7 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <ScrollZoomReveal />
+        <ScrollZoomReveal/>
         <About />
         <Projects />
         <Certifications />

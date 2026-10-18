@@ -56,7 +56,7 @@ export default function ScrollZoomReveal() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[115vh] sm:h-[130vh] w-full bg-[#020617] text-white overflow-hidden"
+      className="relative hidden md:flex h-[115vh] sm:h-[130vh] w-full bg-[#020617] text-white overflow-hidden"
     >
       {/* Top seamless transition gradient from Hero */}
       <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#020617] to-transparent z-20 pointer-events-none" />

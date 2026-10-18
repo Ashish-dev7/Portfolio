@@ -14,7 +14,7 @@ export default function MatrixCursorTrail({
     fallSpeed = 0.7, // px per frame drift downward
     glow = 8, // glow blur radius (0 to disable)
     flicker = 0.08, // chance per frame a glyph swaps character
-    characters = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789",
+    characters = "01010101010101001010101101010010110110010101010",
     zIndex = 9999,
 }) {
     const canvasRef = useRef(null)
